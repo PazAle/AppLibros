@@ -1,8 +1,5 @@
 package com.tallerwebi.dominio.libro;
 
-import com.tallerwebi.dominio.excepcion.LibroExistente;
-import com.tallerwebi.dominio.excepcion.UsuarioExistente;
-import com.tallerwebi.dominio.usuario.Usuario;
 import com.tallerwebi.infraestructura.RepositorioLibro;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,23 +16,21 @@ public class ServicioLibroImpl implements ServicioLibro {
         this.repositorioLibro = repositorioLibro;
     }
     @Override
-    public List<Libro> getLibros() {
+    public Set<Libro> getLibros() {
         return repositorioLibro.getLibros();
     }
 
     @Override
-    public Libro getLibro(Long id) {
-        return repositorioLibro.buscarLibroPorId(id);
+    public Libro obtenerLibroPorId(Long id) {
+        return repositorioLibro.obtenerLibroPorId(id);
     }
 
-    @Override
-    public void registrarLibro(Libro libro) throws LibroExistente {
-        Libro libroEncontrado = repositorioLibro.buscarLibroPorNombre(libro.getNombre());
-        if(libroEncontrado != null){
-            throw new LibroExistente();
-        }
+    public List <Libro> obtenerLibroPorNombre(String nombre){
+        return repositorioLibro.obtenerLibroPorNombre(nombre);
+    }
 
-        repositorioLibro.guardar(libro);
+    public boolean borrarLibro(Long id){
+        return repositorioLibro.borrarLibro(id);
     }
 
 

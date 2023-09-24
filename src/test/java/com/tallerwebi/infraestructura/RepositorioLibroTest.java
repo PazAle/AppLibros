@@ -14,8 +14,13 @@ import org.springframework.test.context.web.WebAppConfiguration;
 
 import javax.transaction.Transactional;
 
+import java.util.List;
+
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.Matchers.hasSize;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @ExtendWith(SpringExtension.class)
 @WebAppConfiguration
@@ -40,7 +45,7 @@ public class RepositorioLibroTest {
     @Test
     public void queSePuedaGuardarYPersistirUnLibro(){
 
-        Libro buscado = repositorioLibro.buscarLibroPorId(libro.getID());
+        Libro buscado = repositorioLibro.obtenerLibroPorId(libro.getID());
 
         assertThat(buscado, is(notNullValue()));
 
@@ -51,8 +56,24 @@ public class RepositorioLibroTest {
     @Test
     public void queSePuedaBuscarUnLibroPorSuNombre(){
 
-        Libro buscado = repositorioLibro.buscarLibroPorNombre(nombre);
+        Libro libro1 = new Libro();
+        libro1.setNombre("Scaramanzia");
+        repositorioLibro.guardar(libro1);
 
-        assertThat(buscado.getNombre(), is(nombre));
+        Libro libro2 = new Libro();
+        libro2.setNombre("Heroes del Whisky");
+        repositorioLibro.guardar(libro2);
+
+        List<Libro> buscados = repositorioLibro.obtenerLibroPorNombre(libro2.getNombre());
+
+        assertThat(buscados, hasSize(1));
     }
+
+    @Transactional
+    @Rollback
+    @Test
+    public void queSePuedaBorrarUnLibro(){
+        assertTrue(repositorioLibro.borrarLibro(libro.getID()));
+    }
+
 }

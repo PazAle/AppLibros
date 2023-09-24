@@ -1,13 +1,12 @@
 package com.tallerwebi.infraestructura;
 
 import com.tallerwebi.dominio.libro.Libro;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import javax.transaction.Transactional;
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -22,15 +21,10 @@ public class RepositorioLibroImpl implements RepositorioLibro {
     }
 
     @Override
-    public List<Libro> getLibros() {
-        List<Libro> libros = new ArrayList<>();
+    public Set<Libro> getLibros() {
+        Set<Libro> libros = new HashSet<>();
         return libros;
 
-    }
-
-    public Libro buscarLibroPorId(Long id) {
-        return (Libro) this.sessionFactory.getCurrentSession().createCriteria(Libro.class)
-                .add(Restrictions.eq("ID", id)).uniqueResult();
     }
 
     @Override
@@ -38,10 +32,29 @@ public class RepositorioLibroImpl implements RepositorioLibro {
         this.sessionFactory.getCurrentSession().save(libro);
     }
 
-    @Override
-    public Libro buscarLibroPorNombre(String nombre) {
-        return (Libro) sessionFactory.getCurrentSession().createCriteria(Libro.class)
-                .add(Restrictions.eq("nombre", nombre)).uniqueResult();
+    public Libro obtenerLibroPorId(Long id) {
+        return (Libro) this.sessionFactory.getCurrentSession().createCriteria(Libro.class)
+                .add(Restrictions.eq("ID", id)).uniqueResult();
     }
 
+    @Override
+    public List obtenerLibroPorNombre(String nombre) {
+        return sessionFactory.getCurrentSession().createCriteria(Libro.class)
+                .add(Restrictions.eq("nombre", nombre)).list();
+    }
+
+    @Override
+    public boolean borrarLibro(Long id) {
+        Libro libroBuscado = obtenerLibroPorId(id);
+
+        final Session session = sessionFactory.getCurrentSession();
+
+        if (libroBuscado != null) {
+            // Borrar el libro
+            session.delete(libroBuscado);
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

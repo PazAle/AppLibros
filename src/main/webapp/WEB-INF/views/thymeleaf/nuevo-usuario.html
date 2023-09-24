@@ -17,7 +17,7 @@
 <body>
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-  <a class="navbar-brand" href="login.html">UNLAM</a>
+  <a class="navbar-brand" href="#">UNLAM</a>
 </nav>
 
 <main role="main" class="container">
@@ -28,21 +28,8 @@
         <h3 class="form-signin-heading">Nuevo Usuario</h3>
         <hr class="colorgraph"><br>
 
-
-        <label>Ingrese su nombre</label><br>
-        <input th:field="*{nombre}" id="nombre" class="form-control" required/>
-
-        <label>Ingrese su apellido</label><br>
-        <input th:field="*{apellido}" id="apellido" class="form-control" required/>
-
-        <label>Ingrese su nombre de Usuario</label><br>
         <input th:field="*{email}" id="email" class="form-control" required/>
-
-        <label>Ingrese su contraseña</label>
-        <input th:field="*{password}" type="password" id="password" class="form-control" required/><br>
-
-        <label>Repita su contraseña</label>
-        <input th:field="*{password}" type="password" id="passwordRepetida" class="form-control" required/><br>
+        <input th:field="*{password}" type="password" id="password" class="form-control" required/>
 
         <button id="btn-registrarme" class="btn btn-lg btn-primary btn-block" Type="Submit">Registrarme</button>
         <p th:if="${error != null}" class="alert alert-danger" th:text="'Error ' + ${error}">
