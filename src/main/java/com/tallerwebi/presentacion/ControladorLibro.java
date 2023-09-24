@@ -15,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @Controller
 public class ControladorLibro {
@@ -51,7 +52,7 @@ public class ControladorLibro {
     @RequestMapping(path = "/libros", method = RequestMethod.GET)
     public ModelAndView getTodosLosLibros(){
         ModelMap model = new ModelMap();
-        List<Libro> libros= this.servicioLibro.getLibros();
+        Set<Libro> libros= this.servicioLibro.getLibros();
         model.put("libros", libros);
         return new ModelAndView("home", model);
     }

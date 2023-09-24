@@ -12,10 +12,12 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.core.IsNot.not;
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.collection.IsEmptyCollection.empty;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -33,49 +35,64 @@ public class ServicioLibroTest {
 
         Libro libro = new Libro();
         libro.setID(3L);
+        libro.setNombre("Rock and Roll");
 
-        when(this.servicioLibro.getLibro(ID)).thenReturn(libro);
+        Libro libro2 = new Libro();
+        libro2.setID(5L);
+        libro2.setNombre("Un poco de amor frances");
+
+        Libro libro3 = new Libro();
+        libro3.setID(8L);
+        libro3.setNombre("Dr. Saturno");
+
+        Set <Libro> listaLibros = new HashSet<>();
+        listaLibros.add(libro);
+        listaLibros.add(libro2);
+        listaLibros.add(libro3);
+
+        List <Libro> librosEncontrados = new ArrayList<>();
+        librosEncontrados.add(libro2);
+
+        when(this.servicioLibro.obtenerLibroPorId(ID)).thenReturn(libro);
+        when(this.servicioLibro.obtenerLibroPorNombre("Un poco de amor frances")).thenReturn((List<Libro>) librosEncontrados);
+        when(this.servicioLibro.getLibros()).thenReturn(listaLibros);
+        when(this.servicioLibro.borrarLibro(8L)).thenReturn(true);
     }
 
     @Test
     public void queSePuedaObtenerUnaListaDeLibrosQueNoEsteVacia(){
 
-        List libros = new ArrayList();
-        libros.add(new Libro());
-        libros.add(new Libro());
-        libros.add(new Libro());
-        libros.add(new Libro());
-        libros.add(new Libro());
-
-        when(this.servicioLibro.getLibros()).thenReturn(libros);
-
-        List<Libro> librosObtenidos = servicioLibro.getLibros();
+        Set<Libro> librosObtenidos = servicioLibro.getLibros();
 
         assertThat(librosObtenidos, not(empty()));
     }
 
     @Test
-    public void queSePuedaObtenerUnaListaDeLibrosQueDevuelvaCincoLibros(){
+    public void queSePuedaObtenerUnaListaDeLibrosQueDevuelvaTresLibros(){
 
-        List libros = new ArrayList<>();
-        libros.add(new Libro());
-        libros.add(new Libro());
-        libros.add(new Libro());
-        libros.add(new Libro());
-        libros.add(new Libro());
+        Set<Libro> librosObtenidos = servicioLibro.getLibros();
 
-        when(this.servicioLibro.getLibros()).thenReturn(libros);
-
-        List<Libro> librosObtenidos = servicioLibro.getLibros();
-
-        assertThat(librosObtenidos.size(), is(5));
+        assertThat(librosObtenidos.size(), is(3));
     }
 
     @Test
     public void queSePuedaObtenerUnLibroPorSuId(){
-        Libro libroObtenido = servicioLibro.getLibro(ID);
+        Libro libroObtenido = servicioLibro.obtenerLibroPorId(ID);
 
         assertThat(libroObtenido.getID(), is(ID));
+    }
+
+    @Test
+    public void queSePuedaObtenerUnLibroPorNombre(){
+
+        List<Libro> librosObtenidos = servicioLibro.obtenerLibroPorNombre("Un poco de amor frances");
+
+        assertThat(librosObtenidos, hasSize(1));
+    }
+
+    @Test
+    public void queSePuedaEliminarUnLibro(){
+        assertTrue(servicioLibro.borrarLibro(8L));
     }
 
 }

@@ -6,9 +6,15 @@ import java.util.Set;
 
 public interface ServicioLibro {
 
-    public List<Libro> getLibros();
+    public Set<Libro> getLibros();
 
-    public Libro getLibro(Long id);
+    public Libro obtenerLibroPorId(Long id);
+
+    public List<Libro> obtenerLibroPorNombre(String nombre);
+
+    public boolean borrarLibro (Long id);
 
     void registrarLibro(Libro libro) throws LibroExistente;
+
+
 }
