@@ -1,5 +1,6 @@
 package com.tallerwebi.dominio.libro;
 
+import com.tallerwebi.dominio.excepcion.LibroExistente;
 import com.tallerwebi.infraestructura.RepositorioLibro;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,6 +32,16 @@ public class ServicioLibroImpl implements ServicioLibro {
 
     public boolean borrarLibro(Long id){
         return repositorioLibro.borrarLibro(id);
+    }
+
+    @Override
+    public void registrarLibro(Libro libro) throws LibroExistente {
+        List <Libro> libroEncontrado = repositorioLibro.obtenerLibroPorNombre(libro.getNombre());
+        if(libroEncontrado != null){
+            throw new LibroExistente();
+        }
+
+        repositorioLibro.guardar(libro);
     }
 
 
