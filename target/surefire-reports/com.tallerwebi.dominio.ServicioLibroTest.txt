@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.tallerwebi.dominio.ServicioLibroTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.806 s - in com.tallerwebi.dominio.ServicioLibroTest
