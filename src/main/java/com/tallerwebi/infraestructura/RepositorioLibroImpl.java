@@ -32,6 +32,7 @@ public class RepositorioLibroImpl implements RepositorioLibro {
         this.sessionFactory.getCurrentSession().save(libro);
     }
 
+
     public Libro obtenerLibroPorId(Long id) {
         return (Libro) this.sessionFactory.getCurrentSession().createCriteria(Libro.class)
                 .add(Restrictions.eq("ID", id)).uniqueResult();
@@ -56,5 +57,10 @@ public class RepositorioLibroImpl implements RepositorioLibro {
         } else {
             return false;
         }
+    }
+
+    @Override
+    public void modificar(Libro libro) {
+        sessionFactory.getCurrentSession().update(libro);
     }
 }

@@ -6,13 +6,16 @@ import java.util.List;
 import java.util.Set;
 
 public interface RepositorioLibro {
-    public Set<Libro> getLibros();
+    Set<Libro> getLibros();
 
-    public Libro obtenerLibroPorId(Long id);
+    Libro obtenerLibroPorId(Long id);
 
-    public void guardar(Libro libro);
+    void guardar(Libro libro);
 
-    public List<Libro> obtenerLibroPorNombre(String nombre);
+    void modificar(Libro libro);
 
-    public boolean borrarLibro (Long id);
+    boolean borrarLibro (Long id);
+
+    List<Libro> obtenerLibroPorNombre(String nombre);
+
 }
