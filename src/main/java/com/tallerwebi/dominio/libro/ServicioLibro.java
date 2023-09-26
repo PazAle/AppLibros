@@ -1,20 +1,23 @@
 package com.tallerwebi.dominio.libro;
 import com.tallerwebi.dominio.excepcion.LibroExistente;
+import com.tallerwebi.dominio.excepcion.LibroInexistente;
 
 import java.util.List;
 import java.util.Set;
 
 public interface ServicioLibro {
 
-    public Set<Libro> getLibros();
+    Set<Libro> getLibros();
 
-    public Libro obtenerLibroPorId(Long id);
+    Libro obtenerLibro(Long id);
 
-    public List<Libro> obtenerLibroPorNombre(String nombre);
-
-    public boolean borrarLibro (Long id);
+    List<Libro> obtenerLibroPorNombre(String nombre);
 
     void registrarLibro(Libro libro) throws LibroExistente;
+
+    boolean eliminarLibro(Long id);
+
+    void modificarLibro(Libro libro) throws LibroInexistente;
 
 
 }
