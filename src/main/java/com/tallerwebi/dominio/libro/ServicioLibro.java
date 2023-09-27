@@ -13,6 +13,8 @@ public interface ServicioLibro {
 
     List<Libro> obtenerLibroPorNombre(String nombre);
 
+    public Libro getLibroPorNombre(String nombre);
+
     void registrarLibro(Libro libro) throws LibroExistente;
 
     boolean eliminarLibro(Long id);

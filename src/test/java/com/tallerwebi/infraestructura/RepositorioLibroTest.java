@@ -40,10 +40,10 @@ public class RepositorioLibroTest {
         repositorioLibro.guardar(libro);
     }
 
-    @Transactional
-    @Rollback
+    @Transactional // mandas datos
+    @Rollback // restablese los registros despues del test vuelve atras
     @Test
-    public void queSePuedaGuardarYPersistirUnLibro(){
+    public void queSePuedaBuscarUnLibroPorSuId(){
 
         Libro buscado = repositorioLibro.obtenerLibroPorId(libro.getID());
 
@@ -72,8 +72,38 @@ public class RepositorioLibroTest {
     @Transactional
     @Rollback
     @Test
+<<<<<<< HEAD
+    public void  queSePuedaGuardarUnLibro(){
+
+        repositorioLibro.guardar(libro);
+
+        Libro libroBuscado = repositorioLibro.buscarLibroPorId(1L);
+
+
+        assertThat(libroBuscado.getID(), is(1L));
+
+    }
+
+    @Transactional
+    @Rollback
+    @Test
+    public void  queSePuedaGuardarUnLibroYAutoincrementeSuId(){
+
+        Libro librito2 = new Libro();
+        librito2.setNombre("Las aventuras de pepito");
+
+        repositorioLibro.guardar(libro);
+        repositorioLibro.guardar(librito2);
+
+        Libro libroBuscado = repositorioLibro.buscarLibroPorId(2L);
+
+
+        assertThat(libroBuscado.getID(), is(2L));
+
+=======
     public void queSePuedaBorrarUnLibro(){
         assertTrue(repositorioLibro.borrarLibro(libro.getID()));
+>>>>>>> c80a47a8bb179eaf94f5b869fdcdb3b31f674c37
     }
 
 }

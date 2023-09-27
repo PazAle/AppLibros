@@ -34,6 +34,11 @@ public class ServicioLibroImpl implements ServicioLibro {
     }
 
     @Override
+    public Libro getLibroPorNombre(String nombre) {
+        return repositorioLibro.buscarLibroPorNombre(nombre);
+    }
+
+    @Override
     public void registrarLibro(Libro libro) throws LibroExistente {
         List <Libro> libroEncontrado = repositorioLibro.obtenerLibroPorNombre(libro.getNombre());
         if(libroEncontrado != null){

@@ -27,13 +27,25 @@ import static org.mockito.Mockito.when;
 public class ServicioLibroTest {
 
     public static final Long ID = 3L;
+    public static final String NOMBRE = "aladdin";
     private ServicioLibro servicioLibro;
     private RepositorioLibro repositorioLibro;
 
     @BeforeEach
     public void init(){
         this.repositorioLibro = mock(RepositorioLibro.class);
+<<<<<<< HEAD
+
+        Libro libro = new Libro();
+        libro.setID(3L);
+
+        libro.setNombre("aladdin");
+
+        when(this.servicioLibro.getLibro(ID)).thenReturn(libro);
+        when(this.servicioLibro.getLibroPorNombre(NOMBRE)).thenReturn(libro);
+=======
         this.servicioLibro = new ServicioLibroImpl(repositorioLibro);
+>>>>>>> c80a47a8bb179eaf94f5b869fdcdb3b31f674c37
     }
 
     @Test
@@ -105,6 +117,12 @@ public class ServicioLibroTest {
     }
 
     @Test
+
+    public void queSePuedaObtenerUnLibroPorSuNombre(){
+        Libro libroObtenido = servicioLibro.getLibroPorNombre(NOMBRE);
+
+        assertThat(libroObtenido.getNombre(), is(NOMBRE) );
+
     public void queSePuedaObtenerUnLibroPorNombre(){
 
         List<Libro> listaCompletaLibros = new ArrayList<>();
