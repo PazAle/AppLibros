@@ -92,7 +92,9 @@ public class ServicioLibroTest {
 
     @Test
     public void queSePuedaEliminarUnLibro(){
+
         assertTrue(servicioLibro.borrarLibro(8L));
     }
+
 
 }
