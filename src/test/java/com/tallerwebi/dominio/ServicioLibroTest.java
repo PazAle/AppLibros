@@ -91,8 +91,11 @@ public class ServicioLibroTest {
     }
 
     @Test
-    public void queSePuedaEliminarUnLibro(){
-        assertTrue(servicioLibro.borrarLibro(8L));
+    public void queSePuedaDarDeBajaUnLibro(){
+
+        when(this.repositorioLibro.borrarLibro(ID)).thenReturn(true);
+        //
+        assertTrue(this.servicioLibro.eliminarLibro(ID));
     }
 
 }
