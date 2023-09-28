@@ -1,27 +1,27 @@
-C:\Users\Ivan\Desktop\Facultad\Taller Web\AppLibros\AppLibros\src\main\java\com\tallerwebi\presentacion\DatosLogin.java
-C:\Users\Ivan\Desktop\Facultad\Taller Web\AppLibros\AppLibros\src\main\java\com\tallerwebi\MyServletInitializer.java
-C:\Users\Ivan\Desktop\Facultad\Taller Web\AppLibros\AppLibros\src\main\java\com\tallerwebi\dominio\categoria\Categoria.java
-C:\Users\Ivan\Desktop\Facultad\Taller Web\AppLibros\AppLibros\src\main\java\com\tallerwebi\dominio\excepcion\UsuarioExistente.java
-C:\Users\Ivan\Desktop\Facultad\Taller Web\AppLibros\AppLibros\src\main\java\com\tallerwebi\dominio\ServicioLogin.java
-C:\Users\Ivan\Desktop\Facultad\Taller Web\AppLibros\AppLibros\src\main\java\com\tallerwebi\dominio\libro\ServicioLibroImpl.java
-C:\Users\Ivan\Desktop\Facultad\Taller Web\AppLibros\AppLibros\src\main\java\com\tallerwebi\infraestructura\RepositorioUsuario.java
-C:\Users\Ivan\Desktop\Facultad\Taller Web\AppLibros\AppLibros\src\main\java\com\tallerwebi\dominio\usuario\Usuario.java
-C:\Users\Ivan\Desktop\Facultad\Taller Web\AppLibros\AppLibros\src\main\java\com\tallerwebi\presentacion\DatosLibro.java
-C:\Users\Ivan\Desktop\Facultad\Taller Web\AppLibros\AppLibros\src\main\java\com\tallerwebi\presentacion\DatosComentario.java
-C:\Users\Ivan\Desktop\Facultad\Taller Web\AppLibros\AppLibros\src\main\java\com\tallerwebi\dominio\libro\ServicioLibro.java
-C:\Users\Ivan\Desktop\Facultad\Taller Web\AppLibros\AppLibros\src\main\java\com\tallerwebi\dominio\ServicioLoginImpl.java
-C:\Users\Ivan\Desktop\Facultad\Taller Web\AppLibros\AppLibros\src\main\java\com\tallerwebi\dominio\excepcion\LibroExistente.java
-C:\Users\Ivan\Desktop\Facultad\Taller Web\AppLibros\AppLibros\src\main\java\com\tallerwebi\config\DatabaseInitializationConfig.java
-C:\Users\Ivan\Desktop\Facultad\Taller Web\AppLibros\AppLibros\src\main\java\com\tallerwebi\infraestructura\RepositorioLibroImpl.java
-C:\Users\Ivan\Desktop\Facultad\Taller Web\AppLibros\AppLibros\src\main\java\com\tallerwebi\infraestructura\RepositorioLibro.java
-C:\Users\Ivan\Desktop\Facultad\Taller Web\AppLibros\AppLibros\src\main\java\com\tallerwebi\presentacion\ControladorLibro.java
-C:\Users\Ivan\Desktop\Facultad\Taller Web\AppLibros\AppLibros\src\main\java\com\tallerwebi\dominio\libro\Libro.java
-C:\Users\Ivan\Desktop\Facultad\Taller Web\AppLibros\AppLibros\src\main\java\com\tallerwebi\presentacion\ControladorLogin.java
-C:\Users\Ivan\Desktop\Facultad\Taller Web\AppLibros\AppLibros\src\main\java\com\tallerwebi\dominio\editorial\Editorial.java
-C:\Users\Ivan\Desktop\Facultad\Taller Web\AppLibros\AppLibros\src\main\java\com\tallerwebi\config\SpringWebConfig.java
-C:\Users\Ivan\Desktop\Facultad\Taller Web\AppLibros\AppLibros\src\main\java\com\tallerwebi\dominio\comentario\ServicioComentarioImpl.java
-C:\Users\Ivan\Desktop\Facultad\Taller Web\AppLibros\AppLibros\src\main\java\com\tallerwebi\dominio\comentario\ServicioComentario.java
-C:\Users\Ivan\Desktop\Facultad\Taller Web\AppLibros\AppLibros\src\main\java\com\tallerwebi\dominio\comentario\Comentario.java
-C:\Users\Ivan\Desktop\Facultad\Taller Web\AppLibros\AppLibros\src\main\java\com\tallerwebi\config\HibernateConfig.java
-C:\Users\Ivan\Desktop\Facultad\Taller Web\AppLibros\AppLibros\src\main\java\com\tallerwebi\dominio\autor\Autor.java
-C:\Users\Ivan\Desktop\Facultad\Taller Web\AppLibros\AppLibros\src\main\java\com\tallerwebi\infraestructura\RepositorioUsuarioImpl.java
+C:\tptallerweb1\AppLibros\src\main\java\com\tallerwebi\dominio\categoria\Categoria.java
+C:\tptallerweb1\AppLibros\src\main\java\com\tallerwebi\config\HibernateConfig.java
+C:\tptallerweb1\AppLibros\src\main\java\com\tallerwebi\infraestructura\RepositorioUsuarioImpl.java
+C:\tptallerweb1\AppLibros\src\main\java\com\tallerwebi\presentacion\DatosComentario.java
+C:\tptallerweb1\AppLibros\src\main\java\com\tallerwebi\config\DatabaseInitializationConfig.java
+C:\tptallerweb1\AppLibros\src\main\java\com\tallerwebi\dominio\comentario\ServicioComentarioImpl.java
+C:\tptallerweb1\AppLibros\src\main\java\com\tallerwebi\presentacion\DatosLibro.java
+C:\tptallerweb1\AppLibros\src\main\java\com\tallerwebi\dominio\ServicioLoginImpl.java
+C:\tptallerweb1\AppLibros\src\main\java\com\tallerwebi\dominio\libro\ServicioLibro.java
+C:\tptallerweb1\AppLibros\src\main\java\com\tallerwebi\dominio\autor\Autor.java
+C:\tptallerweb1\AppLibros\src\main\java\com\tallerwebi\infraestructura\RepositorioLibroImpl.java
+C:\tptallerweb1\AppLibros\src\main\java\com\tallerwebi\dominio\libro\ServicioLibroImpl.java
+C:\tptallerweb1\AppLibros\src\main\java\com\tallerwebi\dominio\excepcion\LibroExistente.java
+C:\tptallerweb1\AppLibros\src\main\java\com\tallerwebi\dominio\comentario\ServicioComentario.java
+C:\tptallerweb1\AppLibros\src\main\java\com\tallerwebi\infraestructura\RepositorioUsuario.java
+C:\tptallerweb1\AppLibros\src\main\java\com\tallerwebi\presentacion\ControladorLibro.java
+C:\tptallerweb1\AppLibros\src\main\java\com\tallerwebi\infraestructura\RepositorioLibro.java
+C:\tptallerweb1\AppLibros\src\main\java\com\tallerwebi\dominio\editorial\Editorial.java
+C:\tptallerweb1\AppLibros\src\main\java\com\tallerwebi\dominio\libro\Libro.java
+C:\tptallerweb1\AppLibros\src\main\java\com\tallerwebi\dominio\comentario\Comentario.java
+C:\tptallerweb1\AppLibros\src\main\java\com\tallerwebi\dominio\usuario\Usuario.java
+C:\tptallerweb1\AppLibros\src\main\java\com\tallerwebi\presentacion\ControladorLogin.java
+C:\tptallerweb1\AppLibros\src\main\java\com\tallerwebi\presentacion\DatosLogin.java
+C:\tptallerweb1\AppLibros\src\main\java\com\tallerwebi\config\SpringWebConfig.java
+C:\tptallerweb1\AppLibros\src\main\java\com\tallerwebi\dominio\excepcion\UsuarioExistente.java
+C:\tptallerweb1\AppLibros\src\main\java\com\tallerwebi\dominio\ServicioLogin.java
+C:\tptallerweb1\AppLibros\src\main\java\com\tallerwebi\MyServletInitializer.java

@@ -1,9 +1,6 @@
 package com.tallerwebi.dominio.libro;
 
-import com.tallerwebi.dominio.categoria.Categoria;
-import com.tallerwebi.dominio.excepcion.CategoriaInexistente;
 import com.tallerwebi.dominio.excepcion.LibroExistente;
-import com.tallerwebi.dominio.excepcion.LibroInexistente;
 import com.tallerwebi.infraestructura.RepositorioLibro;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,12 +22,16 @@ public class ServicioLibroImpl implements ServicioLibro {
     }
 
     @Override
-    public Libro obtenerLibro(Long id) {
+    public Libro obtenerLibroPorId(Long id) {
         return repositorioLibro.obtenerLibroPorId(id);
     }
 
     public List <Libro> obtenerLibroPorNombre(String nombre){
         return repositorioLibro.obtenerLibroPorNombre(nombre);
+    }
+
+    public boolean borrarLibro(Long id){
+        return repositorioLibro.borrarLibro(id);
     }
 
     @Override
@@ -41,19 +42,6 @@ public class ServicioLibroImpl implements ServicioLibro {
         }
 
         repositorioLibro.guardar(libro);
-    }
-
-    public boolean eliminarLibro(Long id){
-        return repositorioLibro.borrarLibro(id);
-    }
-
-    @Override
-    public void modificarLibro(Libro libro) throws LibroInexistente {
-        Libro libroInexistente = this.repositorioLibro.obtenerLibroPorId(libro.getID());
-        if(libroInexistente == null){
-            throw new LibroInexistente();
-        }
-        this.repositorioLibro.modificar(libro);
     }
 
 
