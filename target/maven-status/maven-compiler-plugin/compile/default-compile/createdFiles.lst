@@ -7,12 +7,16 @@ com\tallerwebi\MyServletInitializer.class
 com\tallerwebi\presentacion\DatosLibro.class
 com\tallerwebi\dominio\excepcion\LibroExistente.class
 com\tallerwebi\presentacion\ControladorLibro.class
+com\tallerwebi\dominio\categoria\ServicioCategoriaImpl.class
 com\tallerwebi\dominio\comentario\Comentario.class
 com\tallerwebi\config\HibernateConfig.class
 com\tallerwebi\dominio\libro\ServicioLibroImpl.class
 com\tallerwebi\dominio\editorial\Editorial.class
 com\tallerwebi\dominio\libro\Libro.class
+com\tallerwebi\infraestructura\RepositorioCategoriaImpl.class
 com\tallerwebi\infraestructura\RepositorioUsuarioImpl.class
+com\tallerwebi\dominio\excepcion\LibroInexistente.class
+com\tallerwebi\dominio\categoria\ServicioCategoria.class
 com\tallerwebi\dominio\autor\Autor.class
 com\tallerwebi\dominio\ServicioLoginImpl.class
 com\tallerwebi\infraestructura\RepositorioLibro.class
@@ -22,6 +26,9 @@ com\tallerwebi\dominio\excepcion\UsuarioExistente.class
 com\tallerwebi\dominio\libro\ServicioLibro.class
 com\tallerwebi\dominio\usuario\Usuario.class
 com\tallerwebi\config\SpringWebConfig.class
+com\tallerwebi\infraestructura\RepositorioCategoria.class
+com\tallerwebi\dominio\excepcion\CategoriaExistente.class
 com\tallerwebi\infraestructura\RepositorioLibroImpl.class
 com\tallerwebi\presentacion\ControladorLogin.class
 com\tallerwebi\dominio\comentario\ServicioComentario.class
+com\tallerwebi\dominio\excepcion\CategoriaInexistente.class
