@@ -135,7 +135,7 @@ public class ServicioLibroTest {
     public void queSePuedaDarDeBajaUnLibro(){
 
         when(this.repositorioLibro.borrarLibro(ID)).thenReturn(true);
-
+        //
         assertTrue(this.servicioLibro.eliminarLibro(ID));
     }
 
