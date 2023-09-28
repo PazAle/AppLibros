@@ -76,4 +76,29 @@ public class RepositorioLibroTest {
         assertTrue(repositorioLibro.borrarLibro(libro.getID()));
     }
 
+    @Transactional
+    @Rollback
+    @Test
+    public void queSePuedaGuardarUnLibro(){
+        this.repositorioLibro.guardar(libro);
+
+        Libro libroBuscado = this.repositorioLibro.obtenerLibroPorId(1L);
+
+        assertThat(libroBuscado.getID(), is(1L));
+    }
+    @Transactional
+    @Rollback
+    @Test
+    public void  queSePuedaGuardarUnLibroYAutoincrementeSuId(){
+        Libro libro2 = new Libro();
+        libro2.setNombre("Aladdin");
+
+        this.repositorioLibro.guardar(libro);
+        this.repositorioLibro.guardar(libro2);
+
+        Libro libroBuscado2 = this.repositorioLibro.obtenerLibroPorId(2L);
+
+        assertThat(libroBuscado2.getID(), is(2L));
+    }
+
 }
